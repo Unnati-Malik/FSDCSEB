@@ -1,0 +1,22 @@
+/* Box ke bahar margin kaam krta hai and box ke andar padding kaam krti hai(mtlb box ke contents ke liye)*/
+
+.container{
+    background-color: aqua;
+    height: 400px;
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding-top: 100px;
+    padding-left: 100px;
+    border: 2rem solid red;
+}
+
+
+.child1, .child2, .child3{
+    border: 2px solid yellow;
+    width: 100px;
+    height: 100px;
+    float: inline-start;
+    margin-right: 20px;
+    margin-top: 40px;
+}
