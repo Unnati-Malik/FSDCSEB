@@ -2,21 +2,34 @@
 
 .container{
     background-color: aqua;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 700px;
     margin-top: 100px;
     margin-left: 100px;
-    padding-top: 100px;
-    padding-left: 100px;
-    border: 2rem solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
 .child1, .child2, .child3{
     border: 2px solid yellow;
     width: 100px;
-    height: 100px;
-    float: inline-start;
-    margin-right: 20px;
-    margin-top: 40px;
+    height: 200px;
+}
+
+.child1{
+    display: flex;
+    width: 240px;
+    gap: 5px;
+}
+
+.child11, .child12{
+    border: 2px solid rgb(0, 42, 255);
+}
+.child11{
+    /* jb multiple child hai toh ek particular ko kitna percent space dena hai pure container ka */
+    flex-basis: 40%; 
 }
