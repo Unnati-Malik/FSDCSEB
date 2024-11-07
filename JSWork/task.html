@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Display</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #8cb3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .button, .input-field {
+            position: absolute;
+        }
+        .button {
+            display: block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .input-field {
+            display: none;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <button class="button" id="startButton">Start</button>
+    <div class="input-field" id="inputField">
+        <input type="number" id="imageCount" placeholder="Enter a number" min="1">
+        <button id="submitButton">Submit</button>
+    </div>
+</div>
+
+<div id="imageContainer"></div>
+
+<script>
+    const startButton = document.getElementById('startButton');
+    const inputField = document.getElementById('inputField');
+    const submitButton = document.getElementById('submitButton');
+    const imageContainer = document.getElementById('imageContainer');
+
+    // Event listener to show input field when Start button is clicked
+    startButton.addEventListener('click', () => {
+        startButton.style.display = 'none';  // Hide start button
+        inputField.style.display = 'block';  // Show input field
+    });
+
+    // Event listener to handle image display when the Submit button is clicked
+    submitButton.addEventListener('click', () => {
+        const imageCount = parseInt(document.getElementById('imageCount').value);
+        imageContainer.innerHTML = '';  // Clear previous images
+        
+        // Generate random images
+        for (let i = 0; i < imageCount; i++) {
+            const img = document.createElement('img');
+            img.src = `https://picsum.photos/200?random=${Math.random()}`;  // Using random images from Picsum
+            imageContainer.appendChild(img);
+        }
+    });
+</script>
+
+</body>
+</html>
